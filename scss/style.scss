@@ -1,0 +1,220 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+// header
+
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, #2ecc71, #3498db); /* Градиентный фон */
+        padding: 15px 20px;
+        color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для добавления глубины */
+        transition: all 0.3s ease; /* Анимация при изменении фона */
+    }
+    &__left-section,
+    &__right-section {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        font-family: "Roboto", sans-serif; /* Измененный шрифт */
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Тень для текста */
+    }
+
+    &__notifications,
+    &__user {
+        display: flex;
+        align-items: center;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;  
+    }
+
+    &__notification-icon,
+    &__user img {
+        margin-left: 20px;
+        color: #fff;
+        transition: color 0.3s; /* Анимация при изменении цвета */
+    }
+
+    &__notification-icon:hover,
+    &__user img:hover {
+        cursor: pointer;
+        color: #f1c40f; /* Измененный цвет при наведении */
+    }
+
+    &:hover {
+        background: linear-gradient(to right, #3498db, #2ecc71); /* Изменение фона при наведении */
+    }
+}
+.container{
+    width: 100%;
+    max-width: 1124px;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-right: 20px; /* Добавляем отступ справа */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #333333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #0056b3;
+}
+
+.content {
+    flex: 1;
+    max-width: 800px;
+}
+
+.post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.username {
+    font-weight: bold;
+    margin-top: 0;
+    color: #333333;
+}
+
+.timestamp {
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.like-btn,
+.dislike-btn {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.like-btn:hover,
+.dislike-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Общие стили для постов и комментариев */
+.post,
+.comments {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Скрытие комментариев по умолчанию */
+.comments{
+    margin-top: 14px;
+}
+
+
+.post .username {
+    font-weight: bold;
+    color: #333333;
+    margin-top: 0;
+}
+
+.post .timestamp {
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+.post .title {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.post .actions {
+    margin-top: 10px;
+}
+
+.post .toggle-comments-btn {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.post .toggle-comments-btn:hover {
+    background-color: #0056b3;
+}
+
+.comments h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.comments ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.comments ul li {
+    margin-bottom: 10px;
+}
