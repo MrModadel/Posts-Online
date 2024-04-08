@@ -1,26 +1,34 @@
-// Функция для обработки клика на кнопке "Показать/скрыть комментарии"
-function toggleComments() {
-  // Находим родительский элемент кнопки (пост)
-  const post = this.closest('.post');
-  // Находим блок комментариев внутри поста
-  const comments = post.querySelector('.comments');
 
-  // Переключаем класс 'hidden', чтобы скрыть или показать блок комментариев
-  comments.classList.toggle('hidden');
-
-  // Проверяем текущее состояние блока комментариев
-  const isHidden = comments.classList.contains('hidden');
-
-  // Изменяем текст кнопки в зависимости от состояния блока комментариев
-  if (isHidden) {
-      this.textContent = 'Показать комментарии';
-  } else {
-      this.textContent = 'Скрыть комментарии';
-  }
-}
-
-// Находим все кнопки "Показать/скрыть комментарии" и добавляем обработчик события на каждую из них
-const toggleButtons = document.querySelectorAll('.toggle-comments-btn');
-toggleButtons.forEach(button => {
-  button.addEventListener('click', toggleComments);
+//select
+const optionMenu = document.querySelector(".select-menu"),
+  selectBtn = optionMenu.querySelector(".select-btn"),
+  options = optionMenu.querySelectorAll(".option"),
+  sBtn_text = optionMenu.querySelector(".sBtn-text");
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+options.forEach(option => {
+  option.addEventListener("click", () => {
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
+    optionMenu.classList.remove("active");
+  });
 });
+
+
+
+let switch__items = document.querySelectorAll('.switch__item');
+let content__containers = document.querySelectorAll('.content__container');
+
+
+switch__items.forEach(item => {
+  item.onclick = () => {
+    switch__items.forEach(q => q.classList.remove('item-act'))
+    item.classList.add('item-act');
+    content__containers.forEach(content=>{
+      content.classList.remove('vsb')
+      if (content.classList[1]===item.classList[1]){
+        content.classList.add('vsb')
+
+      }
+    })
+  }
+})

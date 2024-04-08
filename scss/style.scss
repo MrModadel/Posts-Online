@@ -1,17 +1,25 @@
-body {
+* {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+body {
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
 }
 // header
-
+.container {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+    padding: 10px;
+}
 .header {
     &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: linear-gradient(to right, #2ecc71, #3498db); /* Градиентный фон */
         padding: 15px 20px;
         color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень для добавления глубины */
@@ -42,73 +50,58 @@ body {
         -moz-user-select: none;
         -ms-user-select: none;
         -o-user-select: none;
-        user-select: none;  
+        user-select: none;
     }
 
     &__notification-icon,
-    &__user img {
+    &__user {
         margin-left: 20px;
         color: #fff;
         transition: color 0.3s; /* Анимация при изменении цвета */
     }
 
     &__notification-icon:hover,
-    &__user img:hover {
+    &__user:hover {
         cursor: pointer;
         color: #f1c40f; /* Измененный цвет при наведении */
     }
 
-    &:hover {
-        background: linear-gradient(to right, #3498db, #2ecc71); /* Изменение фона при наведении */
-    }
 }
-.container{
-    width: 100%;
-    max-width: 1124px;
-}
+//main
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    position: relative;
+    &__container {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        align-items: flex-start;
+        padding: 20px;
+        justify-items: center;
+    }
 }
 
 .sidebar {
-    width: 200px;
-    background-color: #ffffff;
+    width: 100%;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-right: 20px; /* Добавляем отступ справа */
-}
+    padding: 0 20px 20px 20px;
+    height: 92vh;
+    margin-right: 40px;
+    h2 {
+        color: white;
 
-.sidebar h2 {
-    margin-top: 0;
-    color: #333333;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-    color: #0056b3;
+        font-size: 32px;
+    }
 }
 
 .content {
-    flex: 1;
     max-width: 800px;
+    width: 100%;
+    &__container{
+        display: none;
+    }
+}
+.vsb{
+    display: block;
 }
 
 .post {
@@ -117,26 +110,38 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-}
+    sup {
+        margin: 0 4px;
+    }
+    &__up,
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+    .text {
+        margin-left: 7px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    .username {
+        font-weight: bold;
+        color: #333333;
+        margin-top: 0;
+    }
 
-.username {
-    font-weight: bold;
-    margin-top: 0;
-    color: #333333;
-}
+    .timestamp {
+        color: #888888;
+        margin-bottom: 10px;
+    }
 
-.timestamp {
-    color: #888888;
-    margin-bottom: 10px;
-}
+    .title {
+        margin-top: 0;
+        color: #007bff;
+    }
 
-.title {
-    margin-top: 0;
-    color: #007bff;
-}
-
-.actions {
-    margin-top: 10px;
+    .actions {
+        margin-top: 10px;
+    }
 }
 
 .like-btn,
@@ -166,29 +171,8 @@ body {
 }
 
 /* Скрытие комментариев по умолчанию */
-.comments{
+.comments {
     margin-top: 14px;
-}
-
-
-.post .username {
-    font-weight: bold;
-    color: #333333;
-    margin-top: 0;
-}
-
-.post .timestamp {
-    color: #888888;
-    margin-bottom: 10px;
-}
-
-.post .title {
-    margin-top: 0;
-    color: #007bff;
-}
-
-.post .actions {
-    margin-top: 10px;
 }
 
 .post .toggle-comments-btn {
@@ -211,10 +195,245 @@ body {
 }
 
 .comments ul {
+    max-height: 360px;
+    overflow-y: auto;
+    margin-top: 10px;
     padding-left: 20px;
     list-style: none;
 }
 
 .comments ul li {
     margin-bottom: 10px;
+}
+
+.select-menu {
+    & h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+    width: 100%;
+    margin: 20px auto;
+}
+.select-menu .select-btn {
+    display: flex;
+    height: 55px;
+    background: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.select-btn i {
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i {
+    transform: rotate(-180deg);
+}
+.select-menu .options {
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.select-menu.active .options {
+    display: block;
+}
+.options .option {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.options .option:hover {
+    background: #f2f2f2;
+}
+.option i {
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text {
+    font-size: 18px;
+    color: #333;
+}
+.item-act {
+    background-color: rgb(0, 0, 0);
+    span {
+        color: #f14d6c !important;
+    }
+}
+
+.switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    gap: 40px;
+    margin: 40px 0 20px;
+    &__item {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 9px;
+        border-radius: 12px;
+        gap: 8px;
+        transition: all 0.2s ease;
+        span {
+            color: #ffffff;
+        }
+        p {
+            font-size: 16px;
+            color: white;
+        }
+    }
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.circles li {
+    position: absolute;
+
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    animation-duration: 10s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+.add{
+    display: flex;
+    height: 55px;
+    background: yellow;
+    padding: 23px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }

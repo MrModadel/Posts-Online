@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posts.ru</title>
   <link rel="stylesheet" href="scss/style.scss">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -21,65 +22,151 @@
         <div class="header__notifications">
           <span class="header__notification-icon material-symbols-outlined">
             notifications
-            </span>
+          </span>
         </div>
         <div class="header__user">
-          <img src="user-icon.png" alt="Иконка пользователя">
+          <span class="material-symbols-outlined">
+            person
+          </span>
         </div>
       </div>
     </div>
   </div>
   <div class="main">
-    <div class="sidebar">
-      <h2>Меню</h2>
-      <ul>
-        <li><a href="#">Район 1</a></li>
-        <li><a href="#">Район 2</a></li>
-        <li><a href="#">Район 3</a></li>
-        <li><a href="#">Категория 1</a></li>
-        <li><a href="#">Категория 2</a></li>
-        <li><a href="#">Категория 3</a></li>
-      </ul>
-    </div>
-    <div class="content" id="posts-container">
-      <h1>Посты</h1>
-      <!-- Пример поста -->
-      <div class="post">
-        <p class="username">User123</p>
-        <p class="timestamp">2024-04-08 13:30</p>
-        <h2 class="title">Заголовок поста</h2>
-        <p class="content">Содержание поста здесь...</p>
-        <div class="actions">
-          <button class="toggle-comments-btn">Показать комментарии</button>
-        </div>
-        <div class="comments hidden">
-          <h3>Комментарии</h3>
-          <ul>
-            <li>Комментарий 1</li>
-            <li>Комментарий 2</li>
-            <!-- Другие комментарии -->
+    <div class="main__container container">
+      <div class="sidebar">
+        <h2>Меню</h2>
+        <button class="add">
+          <span class="material-symbols-outlined">
+            edit
+          </span>
+          Добавить пост
+        </button>
+        <div class="select-menu">
+          <h2>Выбор города или региона:</h2>
+          <div class="select-btn">
+            <span class="sBtn-text">Москва</span>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+          <ul class="options">
+            <li class="option">
+              <i class="bx bxl-github" style="color: #171515;"></i>
+              <span class="option-text">Москва</span>
+            </li>
+            <li class="option">
+              <i class="bx bxl-linkedin-square" style="color: #0E76A8;"></i>
+              <span class="option-text">Санкт-Петербург</span>
+            </li>
+        
           </ul>
         </div>
       </div>
-      <div class="post">
-        <p class="username">User123</p>
-        <p class="timestamp">2024-04-08 13:30</p>
-        <h2 class="title">Заголовок поста</h2>
-        <p class="content">Содержание поста здесь...</p>
-        <div class="comments hidden">
-          <h3>Комментарии</h3>
-          <ul>
-            <li>Комментарий 1</li>
-            <li>Комментарий 2</li>
-            <!-- Другие комментарии -->
-          </ul>
+      <div class="content" id="posts-container">
+        <div class="content_switch switch">
+          <div class="switch__item  all item-act">
+            <span class="material-symbols-outlined">
+              newsmode
+            </span>
+            <p>Все</p>
+          </div>
+          <div class="switch__item posts">
+            <span class="material-symbols-outlined">
+              forum
+            </span>
+            <p>Посты</p>
+          </div>
+          <div class="switch__item announcement">
+            <span class="material-symbols-outlined">
+              newsmode
+            </span>
+            <p>Объявление</p>
+          </div>
+        </div>
+        <div class="content__wrapper">
+          <div class="content__container all vsb">
+            <div class="post">
+              <div class="post__up">
+                <div class="post__info">
+                  <p class="username">User1</p>
+                  <sup>•</sup>
+                  <p class="location">Москва</p>
+                </div>
+                <p class="timestamp">2024-04-08 13:30</p>
+              </div>
+
+              <h2 class="title">Заголовок поста</h2>
+              <p class="text">Содержание поста здесь...</p>
+              <div class="comments ">
+                <h3>Комментарии</h3>
+                <ul>
+                  <li>Комментарий 1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content__container posts">
+            <div class="post">
+              <div class="post__up">
+                <div class="post__info">
+                  <p class="username">User2</p>
+                  <sup>•</sup>
+                  <p class="location">Москва</p>
+                </div>
+                <p class="timestamp">2024-04-08 13:30</p>
+              </div>
+
+              <h2 class="title">Заголовок поста</h2>
+              <p class="text">Содержание поста здесь...</p>
+              <div class="comments ">
+                <h3>Комментарии</h3>
+                <ul>
+                  <li>Комментарий 1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="content__container announcement">
+            <div class="post">
+              <div class="post__up">
+                <div class="post__info">
+                  <p class="username">User3</p>
+                  <sup>•</sup>
+                  <p class="location">Москва</p>
+                </div>
+                <p class="timestamp">2024-04-08 13:30</p>
+              </div>
+
+              <h2 class="title">Заголовок поста</h2>
+              <p class="text">Содержание поста здесь...</p>
+              <div class="comments ">
+                <h3>Комментарии</h3>
+                <ul>
+                  <li>Комментарий 1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Конец примера поста -->
     </div>
   </div>
-
   <script src="main.js"></script>
+
+
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
 </body>
 
 </html>
